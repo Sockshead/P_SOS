@@ -1,0 +1,10 @@
+if (evento.getSource() == this.jButton2) {
+            this.butones = 2;
+            this.dato=JOptionPane.showInputDialog("Ingrese el codigo de la carrera: ");
+            Carrera prog=this.programa.verCarrera(dato);
+            if(prog!=null){
+                this.setVisible(false);
+                Cursos carrera=new Cursos(prog,this);
+                carrera.desactivador();
+            }
+        }
