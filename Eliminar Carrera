@@ -1,0 +1,25 @@
+public void EliminarCarrera(){
+        String Cod="";
+        int I=0;
+        boolean Encontrado=false;
+        Carrera Car;
+        Cod=JOptionPane.showInputDialog("Digite el codigo de la carrera a eliminar: ");
+        for(int a=0;a<ArrayCarrera.size();a++){
+            Car=ArrayCarrera.get(a);
+            if(Car.getCodigo().equals(Cod)){
+             I=a;  
+             Encontrado=true;
+            }
+            else{
+                Encontrado=false;
+            }
+        }
+        if(Encontrado==true){
+            ArrayCarrera.remove(I);
+            JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente");
+        }
+        if(Encontrado==false){
+            JOptionPane.showMessageDialog(null, "ESE CODIGO NO EXISTE..!", "Error", 0);
+        }
+        
+    }
