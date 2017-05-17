@@ -1,0 +1,34 @@
+public void ModificarCarrera(Programas Prog,AddCarrera ACar){
+        String Cod;
+        Carrera Car=null;
+        Boolean A=false;
+        int I=0;
+       
+        Cod = JOptionPane.showInputDialog("Digite el código: ");
+        for(int a=0;a<ArrayCarrera.size();a++){
+            Car=ArrayCarrera.get(a);
+            if (Car.getCodigo().equalsIgnoreCase(Cod)){
+                A=true;
+                I=a;
+                ACar.setVisible(true);
+                if (Car.isAcreditada() == true) {
+                        ACar.getChkAcreditado().setSelected(true);
+                    }
+                if (Car.isOnline() == true) {
+                        ACar.getChkOnline().setSelected(true);
+                    }
+                if (Car.isPresencial()== true) {
+                        ACar.getChkPresencial().setSelected(true);
+                    }
+                ACar.getTxtCodigo().setText(Car.getCodigo());
+                ACar.getTxtPrograma().setText(Car.getCarrera());
+            }
+            
+        }
+        if(A==true){
+            ArrayCarrera.remove(I);
+        }
+        if(A==false){
+            JOptionPane.showMessageDialog(null, "ESE CODIGO NO EXISTE..!", "Error", 0);
+        }
+    }
