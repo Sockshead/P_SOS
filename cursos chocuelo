@@ -1,0 +1,28 @@
+public Cursos(Carrera carrera,Programas gestor)
+    {
+        initComponents();
+        this.gestor = gestor;
+        this.carrera= carrera;
+        this.despliegue();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.poneaEscuchar();
+    }
+    
+    private void despliegue() 
+    {
+        this.jTextField1.setText(this.carrera.getCodigo());
+        this.jTextField2.setText(this.carrera.getNombre());
+        if(this.carrera.isAcreditada())
+        {
+            this.jCheckBox1.setSelected(true);
+        }
+        if(this.carrera.isPresencial())
+        {
+            this.jCheckBox2.setSelected(true);
+        }
+        if(this.carrera.isOnline())
+        {
+            this.jCheckBox3.setSelected(true);
+        }
+    }
