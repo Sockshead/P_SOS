@@ -1,0 +1,74 @@
+private void  TOTAsignaturas() 
+    {
+        String dato;
+        Carrera prog=null;
+        FileReader file;
+        BufferedReader br;
+        
+        String registro;
+         
+        String[] campos;
+        String x;
+        
+        //ArrayList<Carrera> todasCarreras=car.getTodos();
+        
+        try
+        {
+           file=new FileReader(ruta);
+           br=new BufferedReader(file);
+           
+           
+           while((registro = br.readLine())!= null)
+           {
+               //for(Carrera prog: todasCarreras)
+                   /int i=0;i<=todasCarreras.size();i++/
+           //{
+               campos=registro.split(",");
+                
+                   
+                   prog=new Carrera(campos[0],campos[1],Boolean.parseBoolean(campos[2]),Boolean.parseBoolean(campos[3]),Boolean.parseBoolean(campos[4]));
+                   Vector fila = new Vector();
+       
+                   fila.add(campos[0]);
+                   fila.add(campos[1]);
+                  
+                   
+                   
+                   
+       
+               
+                   
+                   if(Boolean.parseBoolean(campos[2])== true)
+                   {
+                       fila.add("Si");
+                   }
+                   else 
+                   {
+                       fila.add("No");
+                   }
+                   if(Boolean.parseBoolean(campos[3])== true)
+                   {
+                       fila.add("Si");
+                   }
+                   else 
+                   {
+                       fila.add("No");
+                   }
+                   if(Boolean.parseBoolean(campos[4])== true)
+                   {
+                       fila.add("Si");
+                   }
+                   else 
+                   {
+                       fila.add("No");
+                   }
+                   this.mod.addRow(fila);
+                   this.existe=true;
+                  
+               }
+           } catch (FileNotFoundException ex) {
+            Logger.getLogger(AllCourses.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(AllCourses.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        }
