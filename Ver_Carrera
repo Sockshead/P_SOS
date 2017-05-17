@@ -1,0 +1,20 @@
+public Carrera verCarrera(String codigo) 
+    {
+        Carrera C=null,programa=null;
+        boolean A = false;
+        ArrayList<Carrera> programas = this.getTodos();
+        for (int a = 0; a < programas.size(); a++) {
+            C = programas.get(a);
+         System.out.println(C.getCodigo()+".."+codigo);
+            if (C.getCodigo().equals(codigo))
+            {
+                programa=C;
+                A=true;
+                break;
+            }
+        }
+        if (A == false) {
+            JOptionPane.showMessageDialog(null, "ESE CODIGO NO EXISTE..!", "Error", 0);
+        }
+        return programa;
+    }
