@@ -3,7 +3,8 @@
         Carrera Car;
         
         DefaultTableModel modelo = (DefaultTableModel) VTodos.getTblVertodos().getModel();
-        
+        TableRowSorter modeloSorter = new TableRowSorter(modelo);
+        VTodos.setRowSorter(modeloSorter);
         for (int a = 0; a < ArrayCarrera.size(); a++) {
             Car = ArrayCarrera.get(a);
             if (FilaActual >= VTodos.getTblVertodos().getRowCount()) {
