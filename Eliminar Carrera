@@ -9,6 +9,7 @@ public void EliminarCarrera(){
             if(Car.getCodigo().equals(Cod)){
              I=a;  
              Encontrado=true;
+             break;
             }
             else{
                 Encontrado=false;
