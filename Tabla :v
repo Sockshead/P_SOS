@@ -1,0 +1,32 @@
+    public void VerTodos(VerTodos VTodos) {
+        int FilaActual = 0;
+        Carrera Car;
+        
+        DefaultTableModel modelo = (DefaultTableModel) VTodos.getTblVertodos().getModel();
+        
+        for (int a = 0; a < ArrayCarrera.size(); a++) {
+            Car = ArrayCarrera.get(a);
+            if (FilaActual >= VTodos.getTblVertodos().getRowCount()) {
+                modelo.addRow(new Object[]{"", "", "", "", ""});
+            }
+            VTodos.getTblVertodos().setValueAt(Car.getCodigo(), FilaActual, 0);
+            VTodos.getTblVertodos().setValueAt(Car.getCarrera(), FilaActual, 1);
+            if (Car.isAcreditada() == true) {
+                VTodos.getTblVertodos().setValueAt("Si", FilaActual, 2);
+            } else if (Car.isAcreditada() == false) {
+                VTodos.getTblVertodos().setValueAt("No", FilaActual, 2);
+            }
+            if (Car.isPresencial() == true) {
+                VTodos.getTblVertodos().setValueAt("Si", FilaActual, 3);
+            } else if (Car.isPresencial() == false) {
+                VTodos.getTblVertodos().setValueAt("No", FilaActual, 3);
+            }
+            if (Car.isOnline() == true) {
+                VTodos.getTblVertodos().setValueAt("Si", FilaActual, 4);
+            } else if (Car.isOnline() == false) {
+                VTodos.getTblVertodos().setValueAt("No", FilaActual, 4);
+            }
+            FilaActual++;
+        }
+
+    }
